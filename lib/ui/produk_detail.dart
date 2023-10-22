@@ -19,9 +19,12 @@ class _ProdukDetailState extends State<ProdukDetail> {
         title: const Text('Detail Produk'),
         actions: const [
           Padding(
-              padding: const EdgeInsets.only(top: 20, right: 20),
-              child: Text('Alvian', style: TextStyle(fontSize: 18),),
-            )
+            padding: const EdgeInsets.only(top: 20, right: 20),
+            child: Text(
+              'Alvian',
+              style: TextStyle(fontSize: 18),
+            ),
+          )
         ],
       ),
       body: Center(
@@ -75,7 +78,14 @@ class _ProdukDetailState extends State<ProdukDetail> {
 //tombol hapus
         OutlinedButton(
           child: const Text("Ya"),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ProdukForm(
+                          produk: widget.produk!,
+                        )));
+          },
         ),
 //tombol batal
         OutlinedButton(
